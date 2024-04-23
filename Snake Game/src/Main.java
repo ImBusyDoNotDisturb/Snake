@@ -12,7 +12,7 @@ public class Main {
 
         // JLabel = a GUI display area for a string of text, an image, or both
 
-        ImageIcon image = new ImageIcon("Snake/Snake Game/src/images here/logo.png");
+        ImageIcon image = new ImageIcon("src/images here/logo.png");
         // Border b = BorderFactory.createLineBorder(Color.green,3);
 
         JLabel l = new JLabel();
