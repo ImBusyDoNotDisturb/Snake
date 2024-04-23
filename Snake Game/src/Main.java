@@ -12,7 +12,7 @@ public class Main {
 
         // JLabel = a GUI display area for a string of text, an image, or both
 
-        ImageIcon image = new ImageIcon("src/images here/logo.png");
+        ImageIcon image = new ImageIcon("Snake Game/src/images here/logo.png");
         // Border b = BorderFactory.createLineBorder(Color.green,3);
 
         JLabel l = new JLabel();
@@ -23,7 +23,7 @@ public class Main {
         l.setForeground(new Color(0, 0, 0)); // set font color of text
         l.setFont(new Font("Ariel", Font.BOLD, 50)); // set font of text
         l.setIconTextGap(-10); // set gap of text to image
-        l.setBackground(new Color(6, 137, 2));
+        l.setBackground(new Color(11, 148, 54));
         l.setOpaque(true);
         // l.setBorder(border); // sets border of label(not image and text)
         l.setVerticalAlignment(JLabel.CENTER); // set vertical position of icon and text within the label
@@ -37,7 +37,7 @@ public class Main {
         f.setResizable(false);
         f.setVisible(true); // makes the frame visible
         f.add(l);
-    
+
         // f.pack();
 
     }
