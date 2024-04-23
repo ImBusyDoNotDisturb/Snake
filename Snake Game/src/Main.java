@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,16 +12,16 @@ public class Main {
 
         // JLabel = a GUI display area for a string of text, an image, or both
 
-        ImageIcon i = new ImageIcon("logo.png");
+        ImageIcon image = new ImageIcon("Snake/Snake Game/src/images here/logo.png");
         // Border b = BorderFactory.createLineBorder(Color.green,3);
 
         JLabel l = new JLabel();
         l.setText("Snake"); // set text of label
-        l.setIcon(i);
+        l.setIcon(image);
         l.setHorizontalTextPosition(JLabel.CENTER); // set text left, center, right of image
         l.setVerticalTextPosition(JLabel.TOP); // set text top, center, botton of image
         l.setForeground(new Color(0, 0, 0)); // set font color of text
-        l.setFont(new Font("Press Start", Font.BOLD, 50)); // set font of text
+        l.setFont(new Font("Ariel", Font.BOLD, 50)); // set font of text
         l.setIconTextGap(-10); // set gap of text to image
         l.setBackground(new Color(6, 137, 2));
         l.setOpaque(true);
@@ -38,6 +37,7 @@ public class Main {
         f.setResizable(false);
         f.setVisible(true); // makes the frame visible
         f.add(l);
+    
         // f.pack();
 
     }
