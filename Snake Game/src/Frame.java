@@ -15,7 +15,7 @@ public class Frame extends JFrame {
         //this.add(l);
         //this.pack();
 
-        ImageIcon i = new ImageIcon("Snake/Snake Game/src/images here/logo.png"); // create an image icon
+        ImageIcon i = new ImageIcon("src/images here/logo.png"); // create an image icon
         this.setIconImage(i.getImage()); // change icon of frame
         this.getContentPane().setBackground(new Color(6, 137, 2)); // change color of the background
     }
