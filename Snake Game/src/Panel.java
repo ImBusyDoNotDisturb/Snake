@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Panel extends JFrame {
-    // JPanel = a GUI component taht functions as a container to hold other
+    // JPanel = a GUI component that functions as a container to hold other
     // components
 
     Panel() {
