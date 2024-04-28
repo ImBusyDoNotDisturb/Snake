@@ -34,7 +34,7 @@ public class Frame extends JFrame {
         l.setVerticalTextPosition(JLabel.TOP); // set text top, center, botton of image
         l.setForeground(new Color(0, 0, 0)); // set font color of text
         l.setFont(new Font("Ariel", Font.BOLD, 50)); // set font of text
-        l.setIconTextGap(-10); // set gap of text to image
+        l.setIconTextGap(-50); // set gap of text to image
         l.setBackground(new Color(11, 148, 54));
         l.setOpaque(true);
         // l.setBorder(border); // sets border of label(not image and text)
