@@ -1,4 +1,4 @@
-/*import java.awt.*;
+import java.awt.*;
 
 
 import java.awt.event.*;
@@ -28,5 +28,5 @@ void actionPerformed(ActionEvent e) {
         l.setVisible(true);
         }	
     }
-}*/
+}
 
