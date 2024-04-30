@@ -78,6 +78,14 @@ public class Frame extends JFrame {
         this.add(l);
         this.setVisible(true); // makes the frame visible
 
+        /*button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                if (e.getSource()==button){
+                f.dispose();
+                JFrame NewFrame = new JFrame();
+                }
+            }
+        });*/
 
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
