@@ -20,7 +20,7 @@ public class Frame extends JFrame {
         JButton button2 = new JButton();
         button.setBounds(165, 250, 100, 30);
         button2.setBounds(165, 290, 100, 30);
-        //button.addActionListener(e -> System.out.println());
+        button.addActionListener(e -> System.out.println());
         button2.addActionListener(e -> System.out.println());
         button.setText("START");
         button2.setText("EXIT");
