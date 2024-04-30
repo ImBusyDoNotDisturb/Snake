@@ -6,6 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +21,7 @@ public class Frame extends JFrame {
         button.setBounds(165, 250, 100, 30);
         button2.setBounds(165, 290, 100, 30);
         //button.addActionListener(e -> System.out.println());
-        //button2.addActionListener(e -> System.out.println());
+        button2.addActionListener(e -> System.out.println());
         button.setText("START");
         button2.setText("EXIT");
         button.setFocusable(false);
@@ -35,6 +37,7 @@ public class Frame extends JFrame {
         button2.setOpaque(true);
         button.setBorderPainted(false);
         button2.setBorderPainted(false);
+        
         
         
         
@@ -74,6 +77,13 @@ public class Frame extends JFrame {
         this.add(button2);
         this.add(l);
         this.setVisible(true); // makes the frame visible
+
+
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);
+            }
+        });
 
         /*@Override
         public void actionPerformed(ActionEvent e){
