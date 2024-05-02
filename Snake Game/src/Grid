@@ -36,7 +36,7 @@ frame.add(new JButton("14"));
 frame.add(new JButton("15"));
 frame.add(new JButton("16"));
 
-frame.serVisible(true);
+frame.setVisible(true);
 
 
 
