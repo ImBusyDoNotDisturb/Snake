@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Grid",
+            "request": "launch",
+            "mainClass": "Grid",
+            "projectName": "Snake_113686c8"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

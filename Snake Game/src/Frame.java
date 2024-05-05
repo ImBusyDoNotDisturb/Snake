@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 
 public class Frame extends JFrame {
     Frame() {
-
+     
         JFrame f = new JFrame();
         JButton button = new JButton();
         JButton button2 = new JButton();
@@ -84,6 +84,9 @@ public class Frame extends JFrame {
                 System.exit(0);
             }
         });
+          
+    }
+        
 
         /*@Override
         public void actionPerformed(ActionEvent e){
@@ -91,9 +94,9 @@ public class Frame extends JFrame {
                 System.out.println();
             }
         }*/
-
-        
-
     }
+     
 
-}
+    
+
+
