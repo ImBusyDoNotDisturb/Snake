@@ -1,4 +1,39 @@
- /* 
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class Grid extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	static final int cols = 8;
+	static final int rows = 8;
+
+	static final int originX = 23;
+	static final int originY = 37;
+	static final int cellSide = 60;
+
+	private int i;
+
+	@Override
+	protected void paintComponent(Graphics g) {
+     super.paintComponent(g);
+
+	 for (int i = 0; i < rows + 1; i++) {
+		g.drawLine(originX, originY + i * cellSide, originX + cols * cellSide, originY + i * cellSide);
+	 }
+      for (int i = 0; i < cols + 1; i++); {
+	g.drawLine(originX + i * cellSide, originY, originX + i * cellSide, originY + rows * cellSide);
+	  }
+
+	}
+	
+	}
+
+
+
+/* 
 class DataGrid{
     //create a 8x8 grid
    int[][] grid = new int[8][8];
@@ -18,7 +53,7 @@ class DataGrid{
     System.out.println();// new line for each row
    }
 }    
- */ 
+  
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -53,3 +88,4 @@ public class Grid{
 
 	}
 }
+*/

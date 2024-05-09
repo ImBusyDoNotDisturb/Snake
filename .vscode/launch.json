@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Grid",
             "request": "launch",
             "mainClass": "Grid",
             "projectName": "Snake_113686c8"
+=======
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Snake_3f5c9c68"
+>>>>>>> 4bb2544c737079acaedd7c7118056943892738d7
         },
         {
             "type": "java",

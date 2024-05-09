@@ -1,7 +1,5 @@
-import java.awt.BorderLayout;
 import java.awt.Color;
 
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
@@ -21,7 +19,7 @@ public class Frame extends JFrame {
         button.setBounds(165, 250, 100, 30);
         button2.setBounds(165, 290, 100, 30);
         //button.addActionListener(e -> System.out.println());
-        button2.addActionListener(e -> System.out.println());
+        //button2.addActionListener(e -> System.out.println());
         button.setText("START");
         button2.setText("EXIT");
         button.setFocusable(false);
@@ -38,10 +36,6 @@ public class Frame extends JFrame {
         button.setBorderPainted(false);
         button2.setBorderPainted(false);
         
-        
-        
-        
-
         this.setTitle("Snake Game"); // title of the game on the frame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit out of appliaction
         this.setResizable(false); // prevent frame from resizing
@@ -78,6 +72,26 @@ public class Frame extends JFrame {
         this.add(l);
         this.setVisible(true); // makes the frame visible
 
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                JFrame f = new JFrame();
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                f.setSize(450, 450);
+                f.setVisible(true);
+                f.setLocationRelativeTo(null);
+                f.setResizable(false);
+            }
+        });
+
+        /*button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                if (e.getSource()==button){
+                f.dispose();
+                JFrame NewFrame = new JFrame();
+                }
+            }
+        });*/
 
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
