@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.FlowLayout;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -14,26 +15,28 @@ public class Frame extends JFrame {
     Frame() {
      
         JFrame f = new JFrame();
-        JButton button = new JButton();
+        JButton StartButton = new JButton();
         JButton button2 = new JButton();
-        button.setBounds(165, 250, 100, 30);
-        button2.setBounds(165, 290, 100, 30);
+        JPanel p = new JPanel(new FlowLayout());
+
+        StartButton.setBounds(165, 250, 95, 25);
+        button2.setBounds(145, 280, 135, 25);
         //button.addActionListener(e -> System.out.println());
         //button2.addActionListener(e -> System.out.println());
-        button.setText("START");
-        button2.setText("EXIT");
-        button.setFocusable(false);
+        StartButton.setText("START");
+        button2.setText("SETTINGS");
+        StartButton.setFocusable(false);
         button2.setFocusable(false);
         //button.setHorizontalTextPosition(JButton.CENTER);
         //button.setVerticalTextPosition(JButton.BOTTOM);
-        button.setFont(new Font("Monospaced", Font.BOLD, 20));
+        StartButton.setFont(new Font("Monospaced", Font.BOLD, 20));
         button2.setFont(new Font("Monospaced", Font.BOLD, 20));
         Color customColor = new Color(0, 204, 0);
-        button.setBackground(customColor);
+        StartButton.setBackground(customColor);
         button2.setBackground(customColor);
-        button.setOpaque(true);
+        StartButton.setOpaque(true);
         button2.setOpaque(true);
-        button.setBorderPainted(false);
+        StartButton.setBorderPainted(false);
         button2.setBorderPainted(false);
         
         this.setTitle("Snake Game"); // title of the game on the frame
@@ -67,20 +70,23 @@ public class Frame extends JFrame {
         l.setVerticalAlignment(JLabel.CENTER); // set vertical position of icon and text within the label
         l.setHorizontalAlignment(JLabel.CENTER); // set horizontal position of icon and text within the label
         l.setBounds(0, 0, 450, 450);
-        this.add(button);
+        this.add(StartButton);
         this.add(button2);
         this.add(l);
         this.setVisible(true); // makes the frame visible
 
-        button.addActionListener(new ActionListener() {
+        StartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                JFrame f = new JFrame();
+                dispose();
+                GameFrame gameFrame = new GameFrame();
+                gameFrame.setVisible(true);
+                /*JFrame f = new JFrame();
                 f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 f.setSize(450, 450);
                 f.setVisible(true);
                 f.setLocationRelativeTo(null);
-                f.setResizable(false);
+                f.setResizable(false);*/
             }
         });
 
@@ -95,7 +101,7 @@ public class Frame extends JFrame {
 
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                System.exit(0);
+                //System.exit(0);
             }
         });
           
