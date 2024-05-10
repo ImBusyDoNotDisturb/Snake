@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 public class GameFrame extends JFrame{
 
     public GameFrame(){
+
         this.add(new Panel());
         this.setTitle("Snake Game"); // title of the game on the frame
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit out of appliaction
