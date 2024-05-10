@@ -1,23 +1,32 @@
-import java.awt.Color;
-import java.awt.FlowLayout;
-
+import java.awt.*;
+//import java.io.File;
+//import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+//import javax.swing.JPanel;
 
 public class Frame extends JFrame {
     Frame() {
-     
-        JFrame f = new JFrame();
+        
+        //JFrame f = new JFrame();
         JButton StartButton = new JButton();
         JButton button2 = new JButton();
-        JPanel p = new JPanel(new FlowLayout());
+        //JPanel p = new JPanel(new FlowLayout());
+
+        /*try{
+            Font customFont = Font.createFont(Font.TRUETYPE_FONT, new File("Snake Game/src/vt323/VT323-Regular.ttf")).deriveFont(12f);
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(customFont);
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }*/
+
+        
 
         StartButton.setBounds(165, 250, 95, 25);
         button2.setBounds(145, 280, 135, 25);
@@ -58,11 +67,14 @@ public class Frame extends JFrame {
         // Border b = BorderFactory.createLineBorder(Color.green,3);
 
         l.setText("SNAKE"); // set text of label
+        //l.setFont(new Font("press-start", Font.BOLD, 100 ));
         l.setIcon(image);
         l.setHorizontalTextPosition(JLabel.CENTER); // set text left, center, right of image
         l.setVerticalTextPosition(JLabel.TOP); // set text top, center, botton of image
         l.setForeground(new Color(0, 0, 0)); // set font color of text
-        l.setFont(new Font("Serif", Font.BOLD, 100)); // set font of text
+        //l.setFont(new Font("ST323", Font.BOLD, 100));
+        //l.setFont(customFont); // set font of text
+        l.setFont(new Font("Serif", Font.BOLD,100));
         l.setIconTextGap(-40); // set gap of text to image
         l.setBackground(new Color(11, 148, 54));
         l.setOpaque(true);
@@ -70,6 +82,7 @@ public class Frame extends JFrame {
         l.setVerticalAlignment(JLabel.CENTER); // set vertical position of icon and text within the label
         l.setHorizontalAlignment(JLabel.CENTER); // set horizontal position of icon and text within the label
         l.setBounds(0, 0, 450, 450);
+
         this.add(StartButton);
         this.add(button2);
         this.add(l);
