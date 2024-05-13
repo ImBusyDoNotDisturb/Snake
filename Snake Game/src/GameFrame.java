@@ -15,7 +15,7 @@ public class GameFrame extends JFrame{
         this.setLocationRelativeTo(null);
         ImageIcon i = new ImageIcon("Snake Game/src/images here/logo.png"); // create an image icon
         this.setIconImage(i.getImage()); // change icon of frame
-        this.getContentPane().setBackground(new Color(11, 148, 54)); // change color of the background
+        this.getContentPane().setBackground(null); // change color of the background
         
         setVisible(true);
 
