@@ -3,27 +3,23 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import java.util.Random;
-import javax.swing.JPanel;
 
 public class Panel extends JPanel implements ActionListener {
     // JPanel = a GUI component that functions as a container to hold other
     // components
-
-    private JButton restart;
-    private boolean isGameOver = false;
     static final int SCREEN_WIDTH = 440;
-    static final int SCREEN_HEIGHT = 440;
-    static final int UNIT_SIZE = 20; //size of square
+    static final int SCREEN_HEIGHT = 430;
+    static final int UNIT_SIZE = 25; //
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     static final int DELAY = 75; // speed the lower the faster
     final int x[] = new int[GAME_UNITS];
     final int y[] = new int[GAME_UNITS];
     int bodyParts = 6;
 
-    private boolean leftDirection = false;
-    private boolean rightDirection = true;
-    private boolean upDirection = false;
-    private boolean downDirection = false;
+    //private boolean leftDirection = false;
+    //private boolean rightDirection = true;
+    //private boolean upDirection = false;
+    //private boolean downDirection = false;
     int appleEaten;
     int appleX;
     int appleY;
@@ -35,7 +31,7 @@ public class Panel extends JPanel implements ActionListener {
     Panel() {
       random = new Random();
       this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
-      this.setBackground(Color.green);
+      this.setBackground(new Color(11, 148, 54));
       this.setFocusable(true);
       this.addKeyListener(new MyKeyAdapter());
       Start();
@@ -45,7 +41,7 @@ public class Panel extends JPanel implements ActionListener {
     public void Start(){
       newApple();
       running = true;
-      timer = new Timer(DELAY,this);
+    timer = new Timer(DELAY,this);
       timer.start();
     }
 
@@ -56,10 +52,12 @@ public class Panel extends JPanel implements ActionListener {
 
     public void draw(Graphics g){
       if(running){
+        /* 
         for (int i = 0; i<SCREEN_HEIGHT/UNIT_SIZE; i++){
           g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
           g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
         }
+        */
         g.setColor(Color.red);
         g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
 
@@ -74,7 +72,7 @@ public class Panel extends JPanel implements ActionListener {
           } 
         }
         g.setColor(Color.BLACK);
-        g.setFont(new Font("Ink Free", Font.BOLD,40));
+        g.setFont(new Font("Serif", Font.ITALIC,20));
         FontMetrics metrics = getFontMetrics(g.getFont());
         g.drawString("SCORE: " + appleEaten, (SCREEN_WIDTH - metrics.stringWidth("SCORE: " + appleEaten))/2, g.getFont().getSize());
       }
@@ -166,12 +164,12 @@ public class Panel extends JPanel implements ActionListener {
     public void gameOver(Graphics g){
       //SCORE
       g.setColor(Color.BLACK);
-      g.setFont(new Font("Ink Free", Font.BOLD,30));
+      g.setFont(new Font("Serif", Font.ITALIC,30));
       FontMetrics metrics1 = getFontMetrics(g.getFont());
       g.drawString("SCORE: " + appleEaten, (SCREEN_WIDTH - metrics1.stringWidth("SCORE: " + appleEaten))/2, g.getFont().getSize());
       //Game Over TEXT
       g.setColor(Color.BLACK);
-      g.setFont(new Font("Ink Free", Font.BOLD,65));
+      g.setFont(new Font("Serif", Font.BOLD,65));
       FontMetrics metrics2 = getFontMetrics(g.getFont());
       g.drawString("GAME OVER", (SCREEN_WIDTH - metrics2.stringWidth("GAME OVER"))/2, SCREEN_HEIGHT/2);
 
