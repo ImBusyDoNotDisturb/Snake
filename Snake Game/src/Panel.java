@@ -9,19 +9,26 @@ public class Panel extends JPanel implements ActionListener {
     // JPanel = a GUI component that functions as a container to hold other
     // components
 
-    static final int SCREEN_WIDTH = 450;
-    static final int SCREEN_HEIGHT = 450;
+    private JButton restart;
+    private boolean isGameOver = false;
+    static final int SCREEN_WIDTH = 440;
+    static final int SCREEN_HEIGHT = 440;
     static final int UNIT_SIZE = 20; //size of square
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     static final int DELAY = 75; // speed the lower the faster
     final int x[] = new int[GAME_UNITS];
     final int y[] = new int[GAME_UNITS];
     int bodyParts = 6;
+
+    private boolean leftDirection = false;
+    private boolean rightDirection = true;
+    private boolean upDirection = false;
+    private boolean downDirection = false;
     int appleEaten;
     int appleX;
     int appleY;
     char direction = 'D';
-    boolean running = false;
+    boolean running = true;
     Timer timer;
     Random random;
 
@@ -86,6 +93,22 @@ public class Panel extends JPanel implements ActionListener {
         x[i] = x[i-1];
         y[i] = y[i-1];
       }
+
+      /*if(upDirection){
+        y[0] -= UNIT_SIZE;
+      }
+
+      if(downDirection){
+        y[0] += UNIT_SIZE;
+      }
+
+      if(leftDirection){
+        x[0] -= UNIT_SIZE;
+      }
+
+      if(rightDirection){
+        x[0] += UNIT_SIZE;
+      }*/
 
       switch (direction) {
         case 'W':
@@ -167,6 +190,33 @@ public class Panel extends JPanel implements ActionListener {
     public class MyKeyAdapter extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e){
+
+          /*int key = e.getKeyCode();
+
+          if ((key == KeyEvent.VK_LEFT) && (!rightDirection)){
+            leftDirection = true;
+            upDirection = false;
+            downDirection = false;
+          }
+
+          if((key == KeyEvent.VK_RIGHT) && (!leftDirection)){
+            rightDirection = true;
+            upDirection = false;
+            downDirection = false;
+          }
+
+          if((key == KeyEvent.VK_UP) && (!downDirection)){
+            upDirection = true;
+            rightDirection = false;
+            leftDirection = false;
+          }
+
+          if((key == KeyEvent.VK_DOWN) && (!upDirection)){
+            downDirection = true;
+            rightDirection = false;
+            leftDirection = false;
+          }/ */
+
           switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
               if(direction != 'D'){
@@ -191,10 +241,9 @@ public class Panel extends JPanel implements ActionListener {
           }
 
         }
+        
     }
-
-
-
+    
 }
       /*p.setBackground(null);
         p.setBounds(0, 0, 250, 250);
