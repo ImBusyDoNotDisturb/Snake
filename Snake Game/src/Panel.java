@@ -41,7 +41,7 @@ public class Panel extends JPanel implements ActionListener {
     public void Start(){
       newApple();
       running = true;
-    timer = new Timer(DELAY,this);
+      timer = new Timer(DELAY,this);
       timer.start();
     }
 
@@ -172,7 +172,11 @@ public class Panel extends JPanel implements ActionListener {
       g.setFont(new Font("Serif", Font.BOLD,65));
       FontMetrics metrics2 = getFontMetrics(g.getFont());
       g.drawString("GAME OVER", (SCREEN_WIDTH - metrics2.stringWidth("GAME OVER"))/2, SCREEN_HEIGHT/2);
-
+       //PRESS SPACE TO RESTART
+       g.setColor(Color.BLACK);
+       g.setFont(new Font("Serif", Font.BOLD,20));
+       FontMetrics metrics = getFontMetrics(g.getFont());
+       g.drawString("Press SPACE to RESTART", (SCREEN_WIDTH - metrics.stringWidth("Press SPACE to RESTART"))/2, 500/2 );
     }
 
     @Override
@@ -183,6 +187,10 @@ public class Panel extends JPanel implements ActionListener {
         checkCollision();
       }
       repaint();
+    }
+
+    private void restarGame(){
+      
     }
 
     public class MyKeyAdapter extends KeyAdapter{
@@ -243,6 +251,10 @@ public class Panel extends JPanel implements ActionListener {
             upDirection = false;
             rightDirection = false;
             leftDirection = false;
+          }
+
+          if((key == KeyEvent.VK_SPACE)){
+            restarGame();
           }
 
           /*switch (e.getKeyCode()) {
