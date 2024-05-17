@@ -6,13 +6,14 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 //import javax.swing.JPanel;
 
 public class Frame extends JFrame {
     Frame() {
-        
+
         //JFrame f = new JFrame();
         JButton StartButton = new JButton();
         JButton button2 = new JButton();
@@ -128,8 +129,8 @@ public class Frame extends JFrame {
             }
         }*/
     }
-     
 
-    
+        
+
 
 
