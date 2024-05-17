@@ -273,7 +273,14 @@ public class Panel extends JPanel implements ActionListener {
             rightDirection = false;
             leftDirection = false;
           }
-
+          if (key == KeyEvent.VK_P) {
+            running =!running; // Toggle the running state
+            if (!running) {
+                timer.stop(); // Pause the game
+            } else {
+                timer.start(); // Resume the game
+            }
+          }
           /*switch (e.getKeyCode()) {
             case KeyEvent.VK_LEFT:
               if(direction != 'D'){
@@ -301,7 +308,7 @@ public class Panel extends JPanel implements ActionListener {
         
     }
     
-}
+  }
       /*p.setBackground(null);
         p.setBounds(0, 0, 250, 250);
         p.setLayout(new BorderLayout());
