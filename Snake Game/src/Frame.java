@@ -89,6 +89,8 @@ public class Frame extends JFrame {
         this.add(l);
         this.setVisible(true); // makes the frame visible
 
+        
+
         StartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
@@ -134,7 +136,7 @@ public class Frame extends JFrame {
                 System.out.println();
             }
         }*/
-    }
+        }
 }
 
         
