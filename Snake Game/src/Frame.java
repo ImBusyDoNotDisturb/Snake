@@ -103,7 +103,19 @@ public class Frame extends JFrame {
                 f.setResizable(false);*/
             }
         });
-
+        
+        button2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                Setting settings = new Setting(Frame.this);
+                settings.setVisible(true);
+                if(settings.isSoundEnabled()) {
+                    // Code to enable sound based on user selection
+                } else {
+                    // Code to disable sound
+                }
+            }
+        });
+        
         /*button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 if (e.getSource()==button){
@@ -113,13 +125,7 @@ public class Frame extends JFrame {
             }
         });*/
 
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                //System.exit(0);
-            }
-        });
-          
-    }
+        
         
 
         /*@Override
@@ -129,6 +135,7 @@ public class Frame extends JFrame {
             }
         }*/
     }
+}
 
         
 
