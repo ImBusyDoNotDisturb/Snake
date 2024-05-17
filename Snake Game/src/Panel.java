@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Panel extends JPanel implements ActionListener {
@@ -20,6 +21,8 @@ public class Panel extends JPanel implements ActionListener {
     private boolean rightDirection = true;
     private boolean upDirection = false;
     private boolean downDirection = false;
+    private ImageIcon appleImage;
+
     int appleEaten;
     int appleX;
     int appleY;
@@ -35,6 +38,7 @@ public class Panel extends JPanel implements ActionListener {
       this.setFocusable(true);
       this.addKeyListener(new MyKeyAdapter());
       Start();
+      appleImage = new ImageIcon("Snake Game/src/images here/apple.png");
 
     }
 
@@ -58,8 +62,7 @@ public class Panel extends JPanel implements ActionListener {
           g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
         }
         */
-        g.setColor(Color.red);
-        g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
+        g.drawImage(appleImage.getImage(), appleX, appleY, UNIT_SIZE, UNIT_SIZE, this);
 
           for(int i = 0; i<bodyParts; i++){
             if(i == 0){
@@ -175,8 +178,11 @@ public class Panel extends JPanel implements ActionListener {
        //PRESS SPACE TO RESTART
        g.setColor(Color.BLACK);
        g.setFont(new Font("Serif", Font.BOLD,20));
-       FontMetrics metrics = getFontMetrics(g.getFont());
-       g.drawString("Press SPACE to RESTART", (SCREEN_WIDTH - metrics.stringWidth("Press SPACE to RESTART"))/2, 500/2 );
+       //FontMetrics metrics = getFontMetrics(g.getFont());
+       if (appleEaten >= 0 ) { // Only show restart option if the player had eaten any apples
+        g.drawString("Press SPACE to RESTART", (SCREEN_WIDTH - g.getFontMetrics().stringWidth("Press SPACE to RESTART")) / 2, 500 / 2);
+    }
+       //g.drawString("Press SPACE to RESTART", (SCREEN_WIDTH - metrics.stringWidth("Press SPACE to RESTART"))/2, 500/2 );
     }
 
     @Override
@@ -189,15 +195,30 @@ public class Panel extends JPanel implements ActionListener {
       repaint();
     }
 
-    private void restarGame(){
-      
+     public void resetGame() {
+        // Reset game state
+        bodyParts = 6; // Reset snake length
+        appleEaten = 0; // Reset score
+        appleX = random.nextInt((int) (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
+        appleY = random.nextInt((int) (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
+        running = true;
+        timer.stop(); // Stop current timer
+        timer.start(); // Restart timer
+        // Reset snake's position and size
+        x[0] = (SCREEN_WIDTH / 2) / UNIT_SIZE * UNIT_SIZE;
+        y[0] = (SCREEN_HEIGHT / 2) / UNIT_SIZE * UNIT_SIZE;
+        Arrays.fill(x, 1, bodyParts, -1); // Clear the rest of the snake's body parts
     }
-
+  
     public class MyKeyAdapter extends KeyAdapter{
         @Override
         public void keyPressed(KeyEvent e){
 
           int key = e.getKeyCode();
+
+          if (key == KeyEvent.VK_SPACE) {
+            resetGame(); // Call resetGame when spacebar is pressed
+        }
 //-------------------ARROW KEYS---------------------------
 /* 
           if ((key == KeyEvent.VK_LEFT) && (!rightDirection)){
@@ -251,10 +272,6 @@ public class Panel extends JPanel implements ActionListener {
             upDirection = false;
             rightDirection = false;
             leftDirection = false;
-          }
-
-          if((key == KeyEvent.VK_SPACE)){
-            restarGame();
           }
 
           /*switch (e.getKeyCode()) {
