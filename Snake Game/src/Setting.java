@@ -12,7 +12,7 @@ public class Setting extends JDialog {
     public Setting(Frame parent) {
         super(parent, "Settings", true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(300, 200);
+        setSize(450, 450);
         setLocationRelativeTo(parent);
         setLayout(new BorderLayout());
 
