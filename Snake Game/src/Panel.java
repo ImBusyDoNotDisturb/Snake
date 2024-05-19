@@ -9,7 +9,7 @@ public class Panel extends JPanel implements ActionListener {
     // JPanel = a GUI component that functions as a container to hold other
     // components
     static final int SCREEN_WIDTH = 430;
-    static final int SCREEN_HEIGHT = 430;
+    static final int SCREEN_HEIGHT = 420;
     static final int UNIT_SIZE = 23; //
     static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
     static final int DELAY = 75; // speed the lower the faster
@@ -57,10 +57,10 @@ public class Panel extends JPanel implements ActionListener {
     public void draw(Graphics g){
       if(running){
          
-        /**/for (int i = 0; i<SCREEN_HEIGHT/UNIT_SIZE; i++){
+        /*for (int i = 0; i<SCREEN_HEIGHT/UNIT_SIZE; i++){
           g.drawLine(i*UNIT_SIZE, 0, i*UNIT_SIZE, SCREEN_HEIGHT);
           g.drawLine(0, i*UNIT_SIZE, SCREEN_WIDTH, i*UNIT_SIZE);
-        }
+        }*/
         
         g.drawImage(appleImage.getImage(), appleX, appleY, UNIT_SIZE, UNIT_SIZE, this);
 
