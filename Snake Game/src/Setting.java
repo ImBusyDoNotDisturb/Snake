@@ -1,3 +1,4 @@
+/*
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
@@ -31,3 +32,4 @@ public class Setting extends JDialog {
         return soundOption.isSelected();
     }
 }
+*/
