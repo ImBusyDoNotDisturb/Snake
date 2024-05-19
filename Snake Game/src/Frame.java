@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 //import javax.swing.JPanel;
 
 public class Frame extends JFrame {
-    private SoundManager soundManager = new SoundManager();
+   // private SoundManager soundManager = new SoundManager();
     Frame() {
 
         //JFrame f = new JFrame();
@@ -35,7 +35,7 @@ public class Frame extends JFrame {
         //button.addActionListener(e -> System.out.println());
         //button2.addActionListener(e -> System.out.println());
         StartButton.setText("START");
-        button2.setText("SETTINGS");
+        button2.setText("EXIT");
         StartButton.setFocusable(false);
         button2.setFocusable(false);
         //button.setHorizontalTextPosition(JButton.CENTER);
@@ -109,13 +109,14 @@ public class Frame extends JFrame {
         
         button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                Setting settings = new Setting(Frame.this);
+System.exit();
+                /*Setting settings = new Setting(Frame.this);
                 settings.setVisible(true);
                 if(settings.isSoundEnabled()) {
                     soundManager.playSound("Snake Game/src/sound/The Snake Game (original GB music).wav");// Code to enable sound based on user selection
                 } else {
                     soundManager.stopSound();// Code to disable sound
-                }
+                }*/
             }
         });
         
