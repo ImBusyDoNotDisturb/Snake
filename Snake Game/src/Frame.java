@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 //import javax.swing.JPanel;
 
 public class Frame extends JFrame {
+    private SoundManager soundManager = new SoundManager();
     Frame() {
 
         //JFrame f = new JFrame();
@@ -111,12 +112,13 @@ public class Frame extends JFrame {
                 Setting settings = new Setting(Frame.this);
                 settings.setVisible(true);
                 if(settings.isSoundEnabled()) {
-                    // Code to enable sound based on user selection
+                    soundManager.playSound("Snake Game/src/sound/The Snake Game (original GB music).wav");// Code to enable sound based on user selection
                 } else {
-                    // Code to disable sound
+                    soundManager.stopSound();// Code to disable sound
                 }
             }
         });
+        
         
         /*button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){

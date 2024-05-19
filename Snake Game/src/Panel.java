@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.Frame;
 import java.awt.event.*;
 import javax.swing.*;
 
@@ -30,8 +31,9 @@ public class Panel extends JPanel implements ActionListener {
     boolean running = true;
     Timer timer;
     Random random;
+    private JFrame frame;
 
-    Panel() {
+    Panel(JFrame Frame) {
       random = new Random();
       this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
       this.setBackground(new Color(11, 148, 54));
@@ -187,7 +189,7 @@ public class Panel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
-      if(running){
+      if (running) {
         move();
         checkFood();
         checkCollision();
@@ -209,6 +211,14 @@ public class Panel extends JPanel implements ActionListener {
         y[0] = (SCREEN_HEIGHT / 2) / UNIT_SIZE * UNIT_SIZE;
         Arrays.fill(x, 1, bodyParts, -1); // Clear the rest of the snake's body parts
     }
+  
+
+    public void Frame() {
+      frame.getContentPane().removeAll(); // Remove all components from the JFrame
+      frame.setContentPane(new Frame()); // Replace with your actual HomePage class
+      frame.revalidate(); // Refresh the JFrame
+      frame.repaint(); // Redraw the JFrame
+  }
   
     public class MyKeyAdapter extends KeyAdapter{
         @Override
@@ -276,7 +286,8 @@ public class Panel extends JPanel implements ActionListener {
           if (key == KeyEvent.VK_P) {
             running =!running; // Toggle the running state
             if (!running) {
-                timer.stop(); // Pause the game
+                timer.stop();
+                Frame(); // Pause the game
             } else {
                 timer.start(); // Resume the game
             }
